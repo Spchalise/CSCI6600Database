@@ -1,0 +1,53 @@
+<!--
+including header content which is common for all pages
+-->
+<%- include ../layouts/header-script.ejs %>	
+<%- include ../layouts/header.ejs %>	
+<style>
+	html {
+		font-size: 15px;
+	} 
+	  </style>
+<div class="container">
+    <div class="card "  style="padding:30px">       
+<form action="/student/add" method="post" name="form1">
+	<div class="row">
+			<label class="col-sm-2">First Name</label>
+			<label class="col-sm-4"><input type="text" class="form-control" name="firstname"  value="<%= firstname %>" /></label>
+		</div>
+		<div class="row"> 
+			<label class="col-sm-2">Last Name</label>
+			<label class="col-sm-4"><input type="text" class ="form-control" name="lastname" id="lastname" value="<%= lastname %>" /></label>
+		</div>
+		<div class="row"> 
+			<label class="col-sm-2">DOB</label>
+			<label class="col-sm-4">
+				<input type="date"  class ="form-control" name="date_of_birth" placeholder="YYYY-MM-DD"  value="<%= date_of_birth %>" /></label>
+		</div>
+		<div class = "row"> 
+			<label class="col-sm-2">Email</label>
+			<label class="col-sm-4"><input type="text" class ="form-control" placeholder="Example@gmail.com"name="email" value="<%= email %>" /></label>
+		</div>
+		<div class="row">
+			<label class="col-sm-2">Department</label>
+			<label class="col-sm-4">
+				<select id="item1" name="studentDepartment" class="form-control">
+					<option value="science">Science</option>
+					<option value="computer">Computer</option>
+					<option value="civil">Civil</option>
+					<option value="electrical">Electrical</option>
+				</select>
+			</label>
+		</div>
+			
+			<footer class = "footer">
+			<input type="submit" class ="btn btn-primary" name="Submit" value="Add" /></footer>
+    </form>
+  </div>
+
+</div>
+
+<!--
+including footer content which is common for all pages
+-->
+<%- include ../layouts/footer.ejs %>

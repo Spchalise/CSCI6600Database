@@ -1,0 +1,61 @@
+<!--
+including header content which is common for all pages
+-->
+<%- include ../layouts/header-script.ejs %>
+<%- include ../layouts/header.ejs %>
+<style>
+  .table tbody tr td {
+    font-size: 15px;
+  }
+
+</style>
+<div class="container">
+    <div class="card">
+        <table class="table table-striped">
+        <thead>
+            <tr class="text-black" style='text-align:left;font-size: 15px;'>
+                <th>Student ID</th>
+                <th>Course ID</th>
+                <th>Assignment ID</th>
+                <th>Points</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+            <!--
+                Using FOREACH LOOP for the users array
+
+                myArray.forEach(function(el, index) {
+                    // el - current element, i - index
+                });
+            -->
+
+            <% if (data) { %>
+            <% data.forEach(function(assignment){ %>
+                <tr>
+                    <td ><%= assignment.studentID %></td>
+                    <td><%= assignment.courseID %></td>
+                    <td><%= assignment.assignmentID %></td>
+                    <td><%= assignment.points %></td>
+                    <td>
+                        <div style="float:left">
+                            <a class="btn btn-primary" href='/assignment/edit/<%= assignment.studentID %>'>Edit</a> &nbsp;
+                            <form method="POST" action="/assignment/delete/<%= assignment.studentID %>" style="float:right">
+                                <input class="btn btn-danger" type="submit" name="delete" value='Delete' onClick="return confirm('Are you sure to delete the student assignment information from the system ?')" />
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+            <% }) %>
+            <% } %>
+
+        </table>
+    </div>
+
+
+</div>
+
+<!--
+including footer content which is common for all pages
+-->
+<%- include ../layouts/footer.ejs %>

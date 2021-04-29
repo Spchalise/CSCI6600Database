@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"<nav class="flexible">
+  <h1 class="text-center" style="padding-top: -1em;padding-bottom: 1em; "> Welcome to the Grading Tool!!</h1>
+  <nav class="navbar navbar-expand-sm bg-light navbar-light" style="margin-top: -10px; padding: 20px 40px; font-size:20px; background-color: red;">
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto text-align nav nav-tabs nav-fill mb-3">
+      <li class="nav-item active">
+        <a class="nav-link" href="/profile">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle nav-item nav-link mx-1" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Student
+        </a>
+        <div class="dropdown-menu flex-column" aria-labelledby="navbarDropdown">
+          <a class="nav-link dropdown-item" href="/student/add">Add</a>
+          <a class="nav-link sdropdown-item" href="/student/list">List</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle nav-item nav-link mx-3" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Assignment
+        </a>
+        <div class="dropdown-menu flex-column " aria-labelledby="navbarDropdown">
+          <a class="nav-link dropdown-item" href="/assignment/add">Add</a>
+          <a class="nav-link dropdown-item" href="/assignment/list">List</a>
+        </div>
+      </li>
+        <li class="nav-item my-2 my-lg-0">
+            <a class="nav-link" href="/grade/result">Show Grade Result </a>
+          </li>
+        <li class="form-inline my-2 my-lg-0">
+
+        </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+        <a class=" nav-link btn btn-outline-danger my-2 my-sm-0" href="/login">Log Out</a>
+    </form>
+
+  </div>
+</nav>
+</nav>
+<h3 style="border-bottom:1px solid silver; text-align: center;padding:20px;color:white;background: rgb(151,147,222);
+  background: linear-gradient(90deg, rgba(151,147,222,1) 2%, rgba(127,152,189,0.9808298319327731) 35%, rgba(0,212,255,1) 100%);">
+   <%= (typeof title != "undefined" ? title : "") %></h3>

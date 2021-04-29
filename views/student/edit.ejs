@@ -1,0 +1,52 @@
+
+<!--
+including header content which is common for all pages
+-->
+<%- include ../layouts/header-script.ejs %>	
+<%- include ../layouts/header.ejs %>	
+<style>
+	html {
+		font-size: 15px;
+	} 
+	  </style>
+<div class="container">
+    <div class="card "  style="padding:30px">       
+<form action="/student/list" method="post" name="form1">
+	<div class="row">
+			<label class="col-sm-2">First Name</label>
+			<label class="col-sm-4"><input type="text" class="form-control" name="firstname"  value="<%= firstname %>" /></label>
+		</div>
+		<div class="row"> 
+			<label class="col-sm-2">Last Name</label>
+			<label class="col-sm-4"><input type="text" class ="form-control" name="lastname" id="lastname" value="<%= lastname %>" /></label>
+		</div>
+		<div class="row"> 
+			<label class="col-sm-2">DOB</label>
+			<label class="col-sm-4">
+				<input type="date"  class ="form-condivol" name="date_of_birth"  value="<%= date_of_birth %>" /></label>
+		</div>
+		<div class = "row"> 
+			<label class="col-sm-2">Email</label>
+			<label class="col-sm-4"><input type="text" class ="form-control" name="email" value="<%= email %>" /></label>
+		</div>
+		<div class ="row"> 
+			<label class="col-sm-2">Department</label>
+			<label class="col-sm-4"><select  name="studenlabelepartment" class="form-control">
+				<option value="science">Science</option>
+				<option value="computer">Computer</option>
+				<option value="civil">Civil</option>
+				<option value="eledivical">Eledivical</option>
+			</select>
+		</label>
+	 </div>
+			<footer class = "footer">
+			<input type="submit" class ="btn btn-primary" name="Submit" value="Update" /></footer>
+    </form>
+  </div>
+
+</div>
+
+<!--
+including footer content which is common for all pages
+-->
+<%- include ../layouts/footer.ejs %>

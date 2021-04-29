@@ -1,0 +1,61 @@
+<!--
+including header content which is common for all pages
+-->
+<%- include ../layouts/header-script.ejs %>
+<%- include ../layouts/header.ejs %>
+<style>
+	.table tbody tr td {
+	  font-size: 15px;
+	}
+  
+  </style>
+<div class="container">
+    <div class="card">
+        <table class="table table-striped table-bordered">
+		<thead>
+			<tr class="text-black" style='text-align:left;font-size: 15px;'>
+				<th>StudentID</th>
+				<th>Firstname</th>
+				<th>Lastname</th>
+				<th>Birth date</th>
+				<th>Email</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+        <!--
+            Using FOREACH LOOP for the users array
+
+            myArray.forEach(function(el, index) {
+                // el - current element, i - index
+            });
+        -->
+
+        <% if (data) { %>
+        <% data.forEach(function(student){ %>
+            <tr>
+                <td><%= student.studentID %></td>
+                <td><%= student.firstname %></td>
+                <td><%= student.lastname %></td>
+                <td><%= student.date_of_birth %></td>
+                <td><%= student.email %></td>
+                <td>
+                    <div style="float:left">
+                        <a class="btn btn-primary" href='/student/edit/<%= student.studentID %>'>Edit</a> &nbsp;
+                        <form method="POST" action="/student/delete/<%= student.studentID %>" style="float:right">
+                            <input class="btn btn-danger" type="submit" name="delete" value='Delete' onClick="return confirm('Are you sure to delete the student information from the system?')" />
+                        </form>
+                    </div>
+                </td>
+            </tr>
+        <% }) %>
+        <% } %>
+
+    </table>
+
+   </div>
+</div>
+
+<!--
+including footer content which is common for all pages
+-->
+<%- include ../layouts/footer.ejs %>

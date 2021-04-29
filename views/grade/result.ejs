@@ -1,0 +1,52 @@
+<!--
+including header content which is common for all pages
+-->
+<%- include ../layouts/header-script.ejs %>	
+<%- include ../layouts/header.ejs %>
+<style>
+    .table tbody tr td {
+      font-size: 15px;
+    }
+  
+  </style>
+<div class="container">
+    <div class="card">
+        <table class="table table-striped">
+        <thead>
+            <tr class=" text-black" style='text-align:left;font-size: 15px;'>
+                <th>studentID</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+                <th>Department</th>
+                <th>Course</th>
+                <th>Total marks</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+
+	<% if (data) { %>
+	<% data.forEach(function(student){ %>
+		<tr>
+			<td><%= student.studentID %></td>
+			<td><%= student.firstname %></td>
+			<td><%= student.lastname %></td>
+            <td><%= student.email %></td>
+            <td><%= student.studentDepartment %></td>
+			<td><%= student.courseID %></td>
+			<td><%= student.total_marks %></td>
+            <td><%= student.grade %></td>
+            
+            
+		</tr>
+	<% }) %>
+	<% } %>
+
+</table>
+</div>
+</div>
+<!--
+including footer content which is common for all pages
+-->
+<%- include ../layouts/footer.ejs %>
+

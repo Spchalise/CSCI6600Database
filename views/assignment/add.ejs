@@ -1,0 +1,66 @@
+<!--
+including header content which is common for all pages
+-->
+<%- include ../layouts/header-script.ejs %>
+<%- include ../layouts/header.ejs %>
+<style>
+
+html, body {
+     height: 100%; 
+     }
+     
+html {
+    font-size: 15px;
+} 
+  </style>
+<div class="container">
+
+    <div class="card "  style="padding:30px">
+        <form action="/assignment/add" method="post" name="form2">
+            <div class="row">
+                <label class="col-sm-2">Assignment Identification</label>
+                <label class="col-sm-4">
+                    <select id="item1" name="assignmentID" class="form-control">
+                        <option value="hw1">Homework1</option>
+                        <option value="hw2">Homework2</option>
+                        <option value="hw3">Homework3</option>
+                        <option value="minipresent">Presentation</option>
+                        <option value="midexam">Mid Term Exam</option>
+                        <option value="finalexam">Final Exam</option>
+                    </select>
+                </label>
+            </div>
+            <div class="row">
+                <label class="col-sm-2">Course Identification</label>
+                <label class="col-sm-4">
+                    <select id="courseID" name="courseID" class="form-control">
+                        <option value="6010">Bigdata CSCI6010</option>
+                        <option value="6600">Database CSCI6600</option>
+                    </select>
+                </label>
+            </div>
+            <div class="row">
+                <label class="col-sm-2">Student Identification</label>
+                <label class="col-sm-4">
+                    <input type="number" class="form-control" name="studentID"  value="<%= studentID %>" />
+                </label>
+            </div>
+            <div class="row">
+                <label class="col-sm-2">Points</label>
+                <label class="col-sm-4">
+                    <input type="number" class="form-control" name="points"  value="<%= points %>" />
+                </label>
+            </div>
+            <footer class="footer" >
+                <input type="submit" class ="btn btn-primary" name="Submit" value="Add" />
+            </footer>
+        </form>
+    </div>
+
+</div>
+
+<!--
+including footer content which is common for all pages
+-->
+<%- include ../layouts/footer.ejs %>
+
